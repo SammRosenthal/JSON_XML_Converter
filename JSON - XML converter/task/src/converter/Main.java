@@ -1,11 +1,9 @@
 package converter;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import org.w3c.dom.*;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-import org.json.simple.JSONObject;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -38,17 +36,17 @@ public class Main {
 
     private static void jsonToXmlParser(String str) {
         JsonObject jsonObject = new JsonParser().parse(str).getAsJsonObject();
-        Set<String> test = jsonObject.keySet();
+        Set<String> jsonKeys = jsonObject.keySet();
 
-        for (String i : test) {
+        for (String key : jsonKeys) {
             StringBuilder sb = new StringBuilder();
-            String value = jsonObject.get(i).toString().replace("\"", "");
+            String value = jsonObject.get(key).toString().replace("\"", "");
             if ("null".equals(value.toLowerCase())) {
-                sb.append("<" + i + "/>");
+                sb.append("<" + key + "/>");
             } else {
-                sb.append("<" + i + ">");
+                sb.append("<" + key + ">");
                 sb.append(value);
-                sb.append("</" + i + ">");
+                sb.append("</" + key + ">");
             }
             System.out.println(sb);
         }
