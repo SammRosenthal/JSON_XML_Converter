@@ -1,0 +1,7 @@
+[1;31m
+Start test 1[0m
+> <qwerty/>
+{"qwerty":null}
+[1;31m
+Start test 2[0m
+> {"success":null}
