@@ -23,6 +23,7 @@ subprojects {
         testCompile 'junit:junit:4.12'
         compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
         implementation 'com.github.stefanbirkner:system-rules:1.19.0'
+        compile 'com.googlecode.json-simple:json-simple:1.1.1'
         testCompile 'com.google.code.gson:gson:2.8.5'
         testCompile 'org.assertj:assertj-swing-junit:3.8.0'
         implementation 'com.github.hyperskill:hs-test:v7.0.1'
